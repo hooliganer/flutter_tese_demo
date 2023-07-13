@@ -1,7 +1,5 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:haozuke_test/pages/home/index.dart';
-import 'package:haozuke_test/pages/login.dart';
 import 'package:haozuke_test/routes.dart';
 
 class Application extends StatelessWidget {

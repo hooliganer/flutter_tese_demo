@@ -1,31 +1,31 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
 
-  const LoginPage({super.key});
+  const RegisterPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
 
   bool showPwd = false;
-
+  bool showAgainPwd = false;
 
   @override
   Widget build(BuildContext context) {
 
     final TapGestureRecognizer tapGesture = TapGestureRecognizer();
 
-    void toRegister() {
-      Navigator.pushReplacementNamed(context, 'register');
+    void toLogin() {
+      Navigator.pushReplacementNamed(context, 'login');
     }
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("登录"),
+        title: const Text("注册"),
       ),
       body: SafeArea(
         minimum: const EdgeInsets.all(30),
@@ -57,17 +57,32 @@ class _LoginPageState extends State<LoginPage> {
 
             const Padding(padding: EdgeInsets.all(10)),
 
+            TextField(
+              obscureText: !showAgainPwd,
+              decoration: InputDecoration(
+                labelText: "确认密码",
+                hintText: "请输入密码",
+                suffixIcon: IconButton(icon: Icon(showAgainPwd ? Icons.visibility_off : Icons.visibility),onPressed: () {
+                  setState(() {
+                    showPwd = !showPwd;
+                  });
+                },),
+              ),
+            ),
+
+            const Padding(padding: EdgeInsets.all(10)),
+
             Container(
               alignment: Alignment.center,
               child: Text.rich(TextSpan(
                 children: [
-                  const TextSpan(text: "还没有账号"),
+                  const TextSpan(text: "已有账号"),
                   TextSpan(
-                      text: "去注册",
+                      text: "去登录",
                       style: const TextStyle(color: Colors.blue),
                       recognizer: tapGesture
                         ..onTap = () {
-                          toRegister();
+                          toLogin();
                         }),
                 ],
               )),
@@ -76,10 +91,10 @@ class _LoginPageState extends State<LoginPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('没有账号？'),
+                const Text('已有账号？'),
                 TextButton(onPressed: () {
-                  toRegister();
-                }, child: const Text('去注册')),
+                  toLogin();
+                }, child: const Text('去登录')),
               ],
             ),
           ],

@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:haozuke_test/pages/empty_page.dart';
-import 'package:haozuke_test/widgets/page_content.dart';
 
 void pushTo(Widget page,BuildContext context) {
   Navigator.push(context, CupertinoPageRoute(builder: (c) {
@@ -65,7 +63,7 @@ class _TablePageState extends State<TablePage> {
               loadData();
               return Container(
                 alignment: Alignment.center,
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 child: const SizedBox(
                   width: 30,
                   height: 30,
@@ -87,11 +85,11 @@ class _TablePageState extends State<TablePage> {
           return Container(
             alignment: Alignment.centerLeft,
             child: ConstrainedBox(
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                 minWidth: double.infinity
               ),
               child: TextButton(
-                style: ButtonStyle(
+                style: const ButtonStyle(
                   // backgroundColor: MaterialStateColor.resolveWith((states) {
                   //   return Colors.grey;
                   // }),
@@ -104,7 +102,7 @@ class _TablePageState extends State<TablePage> {
                 },
                 child: Container(
                   alignment: Alignment.centerLeft,
-                  child: Text(array[index],style: TextStyle(
+                  child: Text(array[index],style: const TextStyle(
                     color: Colors.black,
                     fontSize: 25,
                     fontWeight: FontWeight.normal ,

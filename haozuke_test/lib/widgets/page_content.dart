@@ -3,9 +3,9 @@ import 'package:haozuke_test/routes.dart';
 
 class PageContent extends StatelessWidget {
 
-  final String name;
+  final String? name;
 
-  const PageContent({super.key, required this.name});
+  const PageContent({super.key, this.name});
 
   @override
   Widget build(BuildContext context) {

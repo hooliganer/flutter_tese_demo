@@ -20,6 +20,7 @@ version: 1.0.0+1
 
 environment:
   sdk: '>=3.0.5 <4.0.0'
+#  sdk: '>=2.12.0 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -32,6 +33,10 @@ dependencies:
     sdk: flutter
 
   fluro: "^2.0.5"
+
+#  flutter_swiper: any #"^1.1.6"
+
+#  flutter_advanced_networkimage: any
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -59,6 +64,12 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - static/images/home-sharp.png
+    - static/images/home.png
+    - static/images/loc.png
+    - static/images/person.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -90,3 +101,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+
