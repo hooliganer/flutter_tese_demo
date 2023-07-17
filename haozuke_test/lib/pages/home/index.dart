@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:haozuke_test/pages/first_page/index.dart';
 import 'package:haozuke_test/pages/home/tab_index/tab_index.dart';
 import 'package:haozuke_test/widgets/page_content.dart';
 
@@ -23,6 +24,8 @@ List<TabItem> tabItems = [
 List<Widget> tabViewList = tabItems.asMap().keys.map((i) {
   if (i == 0) {
     return const TabIndex();
+  } else if (i == 1) {
+    return const FirstPage();
   }
   return PageContent(name: tabItems[i].title,);
 }).toList();

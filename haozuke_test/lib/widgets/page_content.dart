@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:haozuke_test/pages/first_page/index.dart';
 import 'package:haozuke_test/routes.dart';
+import 'package:get/get.dart';
 
 class PageContent extends StatelessWidget {
 
@@ -28,8 +30,11 @@ class PageContent extends StatelessWidget {
             Navigator.pushNamed(context, "/room/222");
           }, child: const Text("房屋详情页，id:222")),
           TextButton(onPressed: () {
-            Navigator.pushNamed(context, Routes.table);
+            Get.toNamed(Routes.table);
           }, child: Text(Routes.table)),
+          TextButton(onPressed: () {
+            Get.to(FirstPage());
+          }, child: const Text('test_getx')),
         ],
       ),
     );

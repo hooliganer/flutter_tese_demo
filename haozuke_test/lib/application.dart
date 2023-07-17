@@ -1,5 +1,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:get/get.dart';
 import 'package:haozuke_test/routes.dart';
 
 class Application extends StatelessWidget {
@@ -11,7 +13,8 @@ class Application extends StatelessWidget {
     FluroRouter arouter = FluroRouter();
     Routes.configureRoutes(arouter);
 
-    return MaterialApp(
+    return GetMaterialApp(
+
       theme: ThemeData(
         colorScheme: const ColorScheme.light(
           primary: Colors.green,
@@ -20,7 +23,19 @@ class Application extends StatelessWidget {
           secondary: Colors.amber,
         ),
       ),
+
       onGenerateRoute: arouter.generator,
+
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+
+      supportedLocales: const [
+        Locale('en','US'),
+        Locale('zh','CN'),
+      ],
+
     );
   }
 }

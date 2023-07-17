@@ -29,8 +29,18 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+
+  intl: ^0.18.0 #0.18.1
+
+  intl_generator: ^0.4.1
+
   flutter:
     sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
+
+  get:
 
   fluro: "^2.0.5"
 
@@ -70,6 +80,9 @@ flutter:
     - static/images/home.png
     - static/images/loc.png
     - static/images/person.png
+    - static/images/bottle.png
+    - static/images/bottle_small.png
+    - static/images/add-fill.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
