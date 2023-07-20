@@ -42,7 +42,11 @@ dependencies:
 
   get:
 
+  get_storage: ^2.1.1
+
   fluro: "^2.0.5"
+
+  dio: ^5.3.0
 
 #  flutter_swiper: any #"^1.1.6"
 
@@ -83,6 +87,9 @@ flutter:
     - static/images/bottle.png
     - static/images/bottle_small.png
     - static/images/add-fill.png
+    - static/images/first_page_cell_like.png
+    - static/images/like_red.png
+    - static/images/like_gray.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

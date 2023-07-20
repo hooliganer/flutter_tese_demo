@@ -1,16 +1,15 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:haozuke_test/pages/first_page/widgest/first_page_cell.dart';
+import 'package:haozuke_test/pages/first_page/widgest/first_page_grid_view.dart';
 import 'package:haozuke_test/widgets/progress_view.dart';
 
 class FirstController extends GetxController {
-  int _counter = 0;
-  int get counter => _counter;
 
-  void increment() {
-    _counter++;
-    update();
+  void gettt() {
+    // var d = GetStorage();
   }
+
 }
 
 class FirstPage extends StatelessWidget {
@@ -19,34 +18,39 @@ class FirstPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return GetBuilder<FirstController>(
         init: FirstController(),
         builder: (controller) {
-
-          return Scaffold(
-
-            appBar: AppBar(title: const Text('Simple')),
-
-            body: Center(
-              child: Padding(
-                padding: EdgeInsets.all(10),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      width: double.infinity,
-                      child: ProgressView(curValue: 1,totalValue: 3,),
+          return LayoutBuilder(builder: (ctx, constraints) {
+            return Scaffold(
+              body: SafeArea(
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          width: double.infinity,
+                          child: ProgressView(
+                            curValue: 1,
+                            totalValue: 3,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Expanded(
+                          child: SizedBox(
+                            child: FirstPageGridView(),
+                          ),
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                      height: 500,
-                      child: FirstPageCollectionView(),
-                    ),
-                  ],
+                  ),
                 ),
               ),
-            ),
-
-          );
+            );
+          });
         });
   }
 }
